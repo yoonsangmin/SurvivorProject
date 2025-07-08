@@ -73,3 +73,10 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Content
+Content/AxeAndShield/*
+Content/HandsomeSwordAndShieldAnims/*
+Content/Orasot_Bundle/*
+Content/Protector/*
+Content/Zombie_Pack/*
