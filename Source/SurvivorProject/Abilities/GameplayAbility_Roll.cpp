@@ -31,6 +31,8 @@ void UGameplayAbility_Roll::ActivateAbility(const FGameplayAbilitySpecHandle Han
 		CancelAbility();
 		return;
 	}
+	
+	Character->SetActorRotation(Character->GetMovementComponent()->GetLastInputVector().Rotation());
 
 	UAbilityTask_PlayMontageAndWait* PlayMontageTask = UAbilityTask_PlayMontageAndWait::CreatePlayMontageAndWaitProxy(this, TEXT("PlayerDodge"), SurvivorAnimInstance->GetAnimationData().Roll);
 	PlayMontageTask->OnCompleted.AddDynamic(this, &UGameplayAbility_Roll::CompleteAbility);
