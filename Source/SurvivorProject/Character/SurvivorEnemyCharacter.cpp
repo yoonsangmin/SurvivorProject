@@ -62,6 +62,11 @@ void ASurvivorEnemyCharacter::Tick(float DeltaTime)
 	}
 }
 
+void ASurvivorEnemyCharacter::ClearBeforeRestart()
+{
+	GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
+}
+
 void ASurvivorEnemyCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
@@ -113,6 +118,8 @@ void ASurvivorEnemyCharacter::SetDead()
 		AIController->StopMovement();
 	}
 
+	GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
+	
 	OnDead.ExecuteIfBound();
 }
 

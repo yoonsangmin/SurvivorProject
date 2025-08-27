@@ -25,6 +25,9 @@ public:
 	virtual void PossessedBy(AController* NewController) override; 
 
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	void ClearBeforeRestart();
 	
 private:
 	// Death
